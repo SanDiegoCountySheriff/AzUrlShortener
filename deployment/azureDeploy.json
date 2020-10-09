@@ -123,14 +123,14 @@
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
                             "value": "[reference(concat('microsoft.insights/components/', variables('insightsAppName')), '2015-05-01').ConnectionString]"
                         },
-                        {
-                            "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
-                        {
-                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
+                      {
+                        "name": "AzureWebJobsStorage",
+                        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.usgovcloudapi.net')]"
+                      },
+                      {
+                        "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.usgovcloudapi.net')]"
+                      },
                         {
                             "name": "WEBSITE_CONTENTSHARE",
                             "value": "[concat(variables('funcAppName'), 'ba91')]"
@@ -143,10 +143,10 @@
                             "name": "FUNCTIONS_V2_COMPATIBILITY_MODE",
                             "value": "true"
                         },
-                        {
-                            "name": "UlsDataStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('UrlsStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('UrlsStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
+                      {
+                        "name": "UlsDataStorage",
+                        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('UrlsStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts',variables('UrlsStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.usgovcloudapi.net')]"
+                      },
                         {
                             "name": "defaultRedirectUrl",
                             "value": "[parameters('defaultRedirectUrl')]"
