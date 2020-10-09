@@ -33,13 +33,13 @@
                 "description": "Security token for the Azure Function."
             }
         },
-        "GitHubURL": {
-            "type": "string",
-            "defaultValue": "https://github.com/fboucher/AzUrlShortener.git",
-            "metadata": {
-                "description": "The URL of GitHub (ending by .git)"
-            }
-        },
+      "GitHubURL": {
+        "type": "string",
+        "defaultValue": "https://github.com/SanDiegoCountySheriff/AzUrlShortener.git",
+        "metadata": {
+          "description": "The URL of GitHub (ending by .git)"
+        }
+      },
         "GitHubBranch": {
             "type": "string",
             "defaultValue": "main",
