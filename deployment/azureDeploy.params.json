@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "baseName": {
-            "value": "AzUrlShortTools"
+            "value": "urlshortener"
         },
         "OwnerName": {
-            "value": "Frank"
+            "value": "Sia"
         },
         "GitHubBranch": {
-            "value": "feature/deploy-it-all"
+            "value": "main"
         },
         "defaultRedirectUrl": {
             "value": "https://azure.com"
@@ -21,7 +21,7 @@
             "value": "test@test.com"
         },
         "frontend-AdminPassword": {
-            "value": "Supernewt42!"
+            "value": "Test123!"
         }
     }
 }

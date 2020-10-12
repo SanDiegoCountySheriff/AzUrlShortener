@@ -43,7 +43,7 @@
         },
         "ExpireOn":{
             "type":"string",
-            "defaultValue":"[utcNow('yyyy-MM-dd')]",
+            "defaultValue":"",
             "metadata": {
                 "description": "Just a text value (format: yyyy-MM-dd) that express when it is safe to delete these resources"
             }
@@ -71,13 +71,13 @@
         }
     },
     "variables":{
-        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
-        "funcAppName": "[toLower(concat(parameters('baseName'), variables('suffix')))]",
-        "funcStorageAccountName": "[tolower(concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),16)), variables('suffix'), 'stg'))]",
-        "funcHhostingPlanName": "[concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),14)), variables('suffix'), 'plan')]",
-        "insightsAppName":"[concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),14)), variables('suffix'), '-meta')]",
+        "suffix": "",
+        "funcAppName": "[toLower(parameters('baseName'))]",
+        "funcStorageAccountName": "[tolower(concat(parameters('baseName'),'stg'))]",
+        "funcHhostingPlanName": "[concat(parameters('baseName'), 'plan')]",
+        "insightsAppName":"[concat(parameters('baseName'), '-meta')]",
         "functionProjectFolder": "src/shortenerTools",
-        "UrlsStorageAccountName": "[concat('urldata', variables('suffix'), 'stg')]",
+        "UrlsStorageAccountName": "[concat('urldata', 'stg')]",
         "frontendInfo": {
           "adminBlazorWebsite": {
             "armTemplateUrl": "[concat('https://raw.githubusercontent.com/SanDiegoCountySheriff/AzUrlShortener/', parameters('GitHubBranch'), '/src/adminTools/adminBlazorWebsite/deployment/adminBlazorWebsite-deployAzure.json')]"
@@ -247,14 +247,14 @@
             ],
             "resourceGroup": "[resourceGroup().name]",
             "apiVersion": "2019-10-01",
-            "properties": {
+            "properties": {   
                 "mode": "Incremental",
                 "templateLink": {
                     "uri": "[variables('frontendInfo')[parameters('frontend')].armTemplateUrl]"
                 },
                 "parameters": {
                     "basename": {
-                        "value" : "[concat('adm', parameters('baseName'))]"
+                        "value" : "[concat(parameters('baseName'),'admin')]"
                     },
                     "AdminEMail": {
                         "value" : "[parameters('frontend-AdminEMail')]"

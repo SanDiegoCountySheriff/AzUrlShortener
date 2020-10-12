@@ -49,7 +49,7 @@
         },
         "ExpireOn":{
             "type":"string",
-            "defaultValue":"[utcNow('yyyy-MM-dd')]",
+            "defaultValue":"",
             "metadata": {
                 "description": "Just a text value (format: yyyy-MM-dd) that express when it is safe to delete these resources"
             }
@@ -63,10 +63,10 @@
         }
     },
     "variables": {
-        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
+        "suffix": "",
         "webAppName": "[toLower(concat(parameters('baseName'), variables('suffix')))]",
-        "webAppStorageAccountName": "[tolower(concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),16)), variables('suffix'), 'stg'))]",
-        "webAppHhostingPlanName": "[concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),14)), variables('suffix'), 'plan')]",
+        "webAppStorageAccountName": "[tolower(concat(substring(parameters('baseName'), 'stg')))]",
+        "webAppHhostingPlanName": "[concat(substring(parameters('baseName'), 'plan'))]",
         "functionProjectFolder": "src/adminTools/adminBlazorWebsite/src/adminBlazorWebsite.csproj"
     },
     "resources": [
