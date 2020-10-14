@@ -186,11 +186,11 @@
             },
             "properties": {
                 "name": "[variables('funcHhostingPlanName')]",
-                "computeMode": "Dynamic"
+                "computeMode": "Premium"
             },
             "sku": {
-                "Tier": "Dynamic",
-                "Name": "Y1"
+                "Tier": "Premium",
+                "Name": "P1"
             }
         },
         {
