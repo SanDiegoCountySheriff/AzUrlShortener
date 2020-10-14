@@ -186,7 +186,7 @@
             },
             "properties": {
                 "name": "[variables('funcHhostingPlanName')]",
-                "computeMode": "Premium"
+                "computeMode": "Shared"
             },
             "sku": {
                 "Tier": "Premium",
